@@ -1,0 +1,72 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-2">Caricaturízate</h2>
+<video id="video" width="640" height="480" autoplay style="display:none;"></video>
+<button class="block mx-auto bg-blue-500 text-white p-4 mb-6" id="sendButton">Capturar Imagen</button>
+<div class="flex justify-between items-center">
+    <canvas class="border-4 border-green-700" id="canvas" width="640" height="480"></canvas>
+    <img id="processedImage" style="display:none;" />
+</div>
+
+<form id="imageForm" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" id="imageData" name="imageData">
+    <input type="hidden" id="rectCoords" name="rectCoords">
+</form>
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const sendButton = document.getElementById('sendButton');
+    const imageDataInput = document.getElementById('imageData');
+    const rectCoordsInput = document.getElementById('rectCoords');
+    const processedImage = document.getElementById('processedImage');
+    let drawing = false;
+    let x_init = 0, y_init = 0;
+    let x_end = 0, y_end = 0;
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+        })
+        .catch(err => {
+            console.error("Error al acceder a la webcam: " + err);
+        });
+
+    video.addEventListener('play', () => {
+        const drawVideo = () => {
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            if (drawing) {
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x_init, y_init, x_end - x_init, y_end - y_init);
+            }
+            requestAnimationFrame(drawVideo);
+        };
+        drawVideo();
+    });
+
+    sendButton.addEventListener('click', () => {
+        const imageData = canvas.toDataURL('image/png');
+        imageDataInput.value = imageData;
+
+        // Un fetch al formulario con los datos 
+        fetch('{% url "cartooning_image" %}', {
+            method: 'POST',
+            body: new FormData(document.getElementById('imageForm'))
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Mostrar la imagen procesada
+            processedImage.src = data.processed_image;
+            processedImage.style.display = 'block';
+        })
+        .catch(err => console.error(err));
+    });
+</script>
+{% endblock scripts %}
