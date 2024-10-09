@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block title %}Cartoonizing an Image{% endblock title %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-8">Caricaturización de una imagen</h2>
+    <div class="mx-auto">
+        <ul class="grid grid-cols-5 gap-6">
+            <a href="{% url "rectangle_camera" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Rectangles</h3>
+                </div>
+            </a>
+            <a href="{% url "color_spaces" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">YUV-HSV Images</h3>
+                </div>
+            </a>
+            <a href="{% url "rotate_image" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Rotate Images</h3>
+                </div>
+            </a>
+            <a href="{% url "resize_image" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Resize Images</h3>
+                </div>
+            </a>
+            <a href="{% url "deform_image" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Affine Transformation</h3>
+                </div>
+            </a>
+        </ul>
+    </div>
+{% endblock content %}

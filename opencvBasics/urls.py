@@ -26,4 +26,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('transformation/', include('imageTransformation.urls')),
     path('filters/', include('imageFilters.urls')),
+    path('cartooning/', include('imageCartoon.urls'))
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
