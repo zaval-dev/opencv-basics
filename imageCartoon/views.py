@@ -120,7 +120,7 @@ def cartoonig_image(request):
             nparr = np.frombuffer(image_bytes, np.uint8)
             img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
             output_img = utils.cartoonize_image(img, ksize=5, sketch_mode=False)
-            # converted_image_path = os.path.join(settings.MEDIA_ROOT, 'hola.jpg') 
+            # converted_image_path = os.path.join(settings.MEDIA_ROOT, 'test.jpg') 
             # print(converted_image_path)           
             # cv2.imwrite(converted_image_path, output_img)
             _, buffer = cv2.imencode('.png', output_img)

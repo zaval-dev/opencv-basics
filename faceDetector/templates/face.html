@@ -1,0 +1,80 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-10">Captura de Webcam con Detección de Rostros</h2>
+
+<div class="mx-auto flex justify-center">
+    <video id="video" width="640" height="480" autoplay class=""></video>
+    
+    <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+    <!-- Resultado -->
+    <img id="processedImage" style="width: 640px; height: 480px;" class="hidden"/>
+</div>
+
+<div class="mt-10 mx-auto flex justify-center items-center gap-6">
+    <button id="startButton" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow-md">Iniciar Captura</button>
+    <button id="stopButton" class="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-md">Detener Captura</button>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const processedImage = document.getElementById('processedImage');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        let capturing = false;
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error al acceder a la webcam: " + err);
+            });
+
+        // Enviar frames al servidor para hacer la drtcción de rostros
+        function captureAndSendFrame() {
+            if (!capturing) return;
+
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imageData = canvas.toDataURL('image/png');
+
+            // el fetch a la url de la vista
+            fetch('{% url "face_app" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({ imageData: imageData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.processed_image) {
+                    processedImage.src = data.processed_image;
+                }
+            })
+            .catch(err => console.error('Error:', err));
+
+            // realizar continuamente el fetch
+            requestAnimationFrame(captureAndSendFrame);
+        }
+
+        startButton.addEventListener('click', () => {
+            video.classList.add('hidden');
+            processedImage.classList.remove('hidden');
+            capturing = true; 
+            captureAndSendFrame();  
+        });
+
+        stopButton.addEventListener('click', () => {
+            video.classList.remove('hidden');
+            processedImage.classList.add('hidden');
+            capturing = false; 
+        });
+</script>
+{% endblock scripts %}

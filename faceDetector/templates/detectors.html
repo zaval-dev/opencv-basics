@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block title %}Tracking Body Parts{% endblock title %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-8">Detección y seguimiento de las partes del cuerpo</h2>
+    <div class="mx-auto">
+        <ul class="grid grid-cols-5 gap-6">
+            <a href="{% url "face_app" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Face detector</h3>
+                </div>
+            </a>
+            <a href="{% url "batman_mask" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Batman Mask</h3>
+                </div>
+            </a>
+            <a href="{% url "moustache_mask" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Moustache Mask</h3>
+                </div>
+            </a>
+            <a href="{% url "sunglasses_mask" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Sunglasses Mask</h3>
+                </div>
+            </a>
+            <a href="{% url "nose_mask" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Pataclaun</h3>
+                </div>
+            </a>
+        </ul>
+    </div>
+{% endblock content %}

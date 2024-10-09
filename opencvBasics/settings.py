@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'imageTransformation',
     'imageFilters',
     'imageCartoon',
+    'faceDetector',
 ]
 
 MIDDLEWARE = [
