@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block title %}Filters{% endblock title %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-8">Detección de bordes y aplicación de filtros de imagen</h2>
+    <div class="mx-auto">
+        <ul class="grid grid-cols-5 gap-6">
+            <a href="{% url "blur_filter" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Blurring</h3>
+                </div>
+            </a>
+            <a href="{% url "sharpen_filter" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Sharpening</h3>
+                </div>
+            </a>
+            <a href="{% url "vignette_filter" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Vignette</h3>
+                </div>
+            </a>
+            <a href="{% url "erosion_dilation_filter" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Erosion</h3>
+                </div>
+            </a>
+            <a href="{% url "contrast_filter" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Enhacing contrast</h3>
+                </div>
+            </a>
+        </ul>
+    </div>
+{% endblock content %}

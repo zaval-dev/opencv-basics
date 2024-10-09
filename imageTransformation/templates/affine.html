@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+
+{% block title %}Affine Transformations{% endblock title %}
+
+{% block content %}
+    <div class="container mx-auto my-8">
+        <h1 class="text-2xl font-bold mb-4">Deformar Imágenes</h1>
+        
+        <form method="POST" enctype="multipart/form-data" class="mb-8">
+            {% csrf_token %}
+            <div class="flex items-center gap-10">
+                <div>
+                    <label class="block mb-2">Sube una imagen:</label>
+                    <input type="file" name="image" class="block mb-4 p-2 border border-gray-300" required>
+                </div>
+                <div>
+                    <label class="block mb-2">Tipo de deformación:</label>
+                    <select name="olas" class="block mb-4 p-2 border border-gray-300">
+                        <option value="horizontal">Olas horizontales</option>
+                        <option value="vertical">Olas verticales</option>
+                        <option value="multidireccion">Olas multidireccionales</option>
+                    </select>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2">Deformar</button>
+            </div>
+        </form>
+
+        {% if original_image %}
+        <div class="flex justify-around items-center gap-10 mb-6">
+            <div>
+                <h2 class="font-bold mb-2">Imagen Original:</h2>
+                <img src="{{ original_image }}" alt="Imagen Original" class="w-full h-auto">
+            </div>
+            <div>
+                <h2 class="font-bold mb-2">Imagen Convertida:</h2>
+                <img src="{{ converted_image }}" alt="Imagen Convertida" class="w-full h-auto">
+            </div>
+        </div>
+        <div class="mx-auto flex justify-center">
+            <a href="{{ download_link }}" download class="bg-blue-500 text-white px-4 py-2">
+                Descargar Imagen
+            </a>
+        </div>
+        {% endif %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}OpenCV Web{% endblock  %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <nav class="fixed w-full top-0 bg-gradient-to-l from-green-700 to-green-950 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="flex items-center justify-around gap-4" href="{% url "index" %}">
+                <i class="fa-brands fa-python fa-2xl text-white"></i>
+                <h1 class="text-white text-2xl font-bold cursor-pointer">OpenCV Basics</h1>
+            </a>
+            <ul class="flex items-center justify-around gap-6">
+                <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="text-white">Transform Image</a></li>
+                <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="text-white">Image filters</a></li>
+                <li class="transition hover:-translate-y-1"><a href="#" class="text-white">Cartoonizing Image</a></li>
+                <li class="transition hover:-translate-y-1"><a href="#" class="text-white">Detect Body Parts</a></li>
+                <li class="transition hover:-translate-y-1"><a href="#" class="text-white">Extract features</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container mx-auto my-24">
+        {% block content %}
+        <!-- Aquí se cargará el contenido de cada apartado -->
+         <p>Esta es la página principal.</p>
+        {% endblock %}
+    </main>
+
+    <footer class="fixed bottom-0 w-full bg-gray-100 p-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 OpenCV Basics. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>
