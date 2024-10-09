@@ -4,38 +4,28 @@
 
 {% block content %}
     <h2 class="text-2xl font-bold mb-8">Extraer las características de una imagen</h2>
-    <div class="mx-auto">
-        <ul class="grid grid-cols-5 gap-6">
-            <a href="{% url "detect_corners" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
-                <div class="text-center text-white space-y-6">
-                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
-                    <h3 class="font-semibold text-lg">Detect All Corners</h3>
-                </div>
+    <div class="mx-auto flex items-center justify-center p-4">
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="{% url "detect_corners" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-arrows-to-dot"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Detectar esquinas</h3>
             </a>
-            <a href="{% url "detect_main_corners" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
-                <div class="text-center text-white space-y-6">
-                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
-                    <h3 class="font-semibold text-lg">Detect Main Corners</h3>
-                </div>
+            <a href="{% url "detect_main_corners" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-arrows-to-circle"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Esquinas principales</h3>
             </a>
-            <a href="{% url "sift_algorithm" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
-                <div class="text-center text-white space-y-6">
-                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
-                    <h3 class="font-semibold text-lg">SIFT Algorithm</h3>
-                </div>
+            <a href="{% url "sift_algorithm" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-regular fa-2x fa-map"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Algoritmo SIFT</h3>
             </a>
-            <a href="{% url "fast_algorithm" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
-                <div class="text-center text-white space-y-6">
-                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
-                    <h3 class="font-semibold text-lg">FAST Algorithm</h3>
-                </div>
+            <a href="{% url "fast_algorithm" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-map"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Algoritmo FAST</h3>
             </a>
-            <a href="{% url "orb_algorithm" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
-                <div class="text-center text-white space-y-6">
-                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
-                    <h3 class="font-semibold text-lg">ORB Algorithm</h3>
-                </div>
+            <a href="{% url "orb_algorithm" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-circle-plus"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Algoritmo ORB</h3>
             </a>
-        </ul>
+        </div>
     </div>
 {% endblock content %}

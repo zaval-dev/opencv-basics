@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-200 text-gray-800">
     <nav class="fixed w-full top-0 bg-gradient-to-l from-green-700 to-green-950 p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a class="flex items-center justify-around gap-4" href="{% url "index" %}">
@@ -15,18 +15,103 @@
                 <h1 class="text-white text-2xl font-bold cursor-pointer">OpenCV Basics</h1>
             </a>
             <ul class="flex items-center justify-around gap-6">
-                <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="text-white">Transform Image</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="text-white">Image filters</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="text-white">Cartoonizing Image</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="text-white">Detect Body Parts</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="text-white">Extract features</a></li>
+                <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="text-white">Transformación de Imágenes</a></li>
+                <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="text-white">Aplicación de filtros</a></li>
+                <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="text-white">Caricaturizar imágenes</a></li>
+                <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="text-white">Detectar rostros</a></li>
+                <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="text-white">Extraer características</a></li>
             </ul>
         </div>
     </nav>
     <main class="container mx-auto my-24">
         {% block content %}
-        <!-- Contenido de cada capítulo -->
-         <p>Esta es la página principal.</p>
+        <div class="grid gap-6 grid-cols-3 max-w-7xl mx-auto mb-6">
+            <a href="{% url "transformation_index" %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-camera-rotate"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Transformación de imágenes</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Espacios de color, rotaciones, y transformaciones afines.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'filters_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-filter"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Aplicación de filtros</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Diferentes filtros para mejorar y transformar imágenes.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'cartooning_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-paint-brush"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Caricaturizar imágenes</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Filtros que simulan una imagen como caricatura.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>     
+        </div>
+        <div class="grid gap-6 grid-cols-2 max-w-7xl mx-auto">
+            <a href="{% url 'face_detector_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-user-secret"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Detectar rostros</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Detección automática de rostros y aplicación de filtros por webcam.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'features_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-magnifying-glass"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Extraer características</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Identificación de características importantes en imágenes, esquinas, etc.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
         {% endblock %}
     </main>
 
