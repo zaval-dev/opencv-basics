@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block title %}Features{% endblock title %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-8">Extraer las características de una imagen</h2>
+    <div class="mx-auto">
+        <ul class="grid grid-cols-5 gap-6">
+            <a href="{% url "detect_corners" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Detect All Corners</h3>
+                </div>
+            </a>
+            <a href="{% url "detect_main_corners" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">Detect Main Corners</h3>
+                </div>
+            </a>
+            <a href="{% url "sift_algorithm" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">SIFT Algorithm</h3>
+                </div>
+            </a>
+            <a href="{% url "fast_algorithm" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">FAST Algorithm</h3>
+                </div>
+            </a>
+            <a href="{% url "orb_algorithm" %}" class="bg-gradient-to-r from-green-800 to-green-600 h-64 rounded-md flex justify-center items-center transition-all hover:-translate-y-2">
+                <div class="text-center text-white space-y-6">
+                    <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                    <h3 class="font-semibold text-lg">ORB Algorithm</h3>
+                </div>
+            </a>
+        </ul>
+    </div>
+{% endblock content %}

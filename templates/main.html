@@ -19,20 +19,20 @@
                 <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="text-white">Image filters</a></li>
                 <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="text-white">Cartoonizing Image</a></li>
                 <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="text-white">Detect Body Parts</a></li>
-                <li class="transition hover:-translate-y-1"><a href="#" class="text-white">Extract features</a></li>
+                <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="text-white">Extract features</a></li>
             </ul>
         </div>
     </nav>
     <main class="container mx-auto my-24">
         {% block content %}
-        <!-- Aquí se cargará el contenido de cada apartado -->
+        <!-- Contenido de cada capítulo -->
          <p>Esta es la página principal.</p>
         {% endblock %}
     </main>
 
     <footer class="fixed bottom-0 w-full bg-gray-100 p-4 mt-12">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 OpenCV Basics. Todos los derechos reservados.</p>
+            <p>&copy; 2024 OpenCVBasics. Todos los derechos reservados.</p>
         </div>
     </footer>
     {% block scripts %}
