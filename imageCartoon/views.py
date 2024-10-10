@@ -26,7 +26,6 @@ def open_webcam(request):
             _, buffer = cv2.imencode('.png', img)
             processed_image_base64 = base64.b64encode(buffer).decode('utf-8')
 
-            # Devolvemos como json la imagen en base64
             return JsonResponse({'processed_image': 'data:image/png;base64,' + processed_image_base64})
 
     return render(request, 'webcam.html')
@@ -37,7 +36,6 @@ def rectangle(request):
         rect_coords = json.loads(request.POST.get('rectCoords'))
 
         if image_data and rect_coords:
-            # Remover el prefijo 'data:image/png;base64,' de la cadena
             image_data = image_data.split(',')[1]
             image_bytes = base64.b64decode(image_data)
             nparr = np.frombuffer(image_bytes, np.uint8)
@@ -50,7 +48,7 @@ def rectangle(request):
             _, buffer = cv2.imencode('.png', img)
             processed_image_base64 = base64.b64encode(buffer).decode('utf-8')
 
-            # Devolvemos como json la imagen en base64
+            # Devolvemos como json la imagen
             return JsonResponse({'processed_image': 'data:image/png;base64,' + processed_image_base64})
 
     return render(request, 'interactive.html')
@@ -114,7 +112,6 @@ def cartoonig_image(request):
         image_data = request.POST.get('imageData')
 
         if image_data:
-            # Remover el prefijo 'data:image/png;base64,' de la cadena
             image_data = image_data.split(',')[1]
             image_bytes = base64.b64decode(image_data)
             nparr = np.frombuffer(image_bytes, np.uint8)
@@ -126,7 +123,6 @@ def cartoonig_image(request):
             _, buffer = cv2.imencode('.png', output_img)
             processed_image_base64 = base64.b64encode(buffer).decode('utf-8')
 
-            # Devolvemos como json la imagen en base64
             return JsonResponse({'processed_image': 'data:image/png;base64,' + processed_image_base64})
 
     return render(request, 'cartoon.html')
