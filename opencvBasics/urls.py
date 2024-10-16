@@ -32,4 +32,5 @@ urlpatterns = [
     path('seam-carving/', include('seamCarving.urls')),
     path('shapes/', include('detectingShapes.urls')),
     path('tracking/', include('trackingOjects.urls')),
+    path('reality/', include('reality.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

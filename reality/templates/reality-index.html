@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+
+{% block title %}Reality{% endblock title %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-8">Realidad aumentada</h2>
+    <div class="mx-auto flex items-center justify-center p-4">
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="{% url "reality_pose" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-regular fa-2x fa-images"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Estimación de pose</h3>
+            </a>
+            <a href="{% url "reality_piramid" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-bolt"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Pirámide</h3>
+            </a>
+            <a href="{% url "reality_tetraed" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-camera-rotate"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Tetraedro</h3>
+            </a>
+            {% comment %} <a href="{% url "tracking_tracker" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-minimize"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Detector personalizado</h3>
+            </a>
+            <a href="{% url "tracking_green" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-hat-wizard"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Detectar amarillo</h3>
+            </a> {% endcomment %}
+        </div>
+    </div>
+{% endblock content %}

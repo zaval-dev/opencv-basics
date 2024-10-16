@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h2 class="text-lg font-semibold mb-4">Tetraedro</h2>
+    
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="bg-blue-500 px-4 py-1 text-white rounded-md">Iniciar</button>
+</form>
+
+{% endblock content %}

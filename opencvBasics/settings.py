@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'seamCarving',
     'detectingShapes',
     'trackingOjects',
+    'reality',
 ]
 
 MIDDLEWARE = [
