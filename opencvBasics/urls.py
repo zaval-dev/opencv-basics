@@ -29,4 +29,5 @@ urlpatterns = [
     path('cartooning/', include('imageCartoon.urls')),
     path('detector/', include('faceDetector.urls')),
     path('features/', include('imageFeatures.urls')),
+    path('seam-carving/', include('seamCarving.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

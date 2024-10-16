@@ -14,18 +14,34 @@
                 <i class="fa-brands fa-python fa-2xl text-white"></i>
                 <h1 class="text-white text-2xl font-bold cursor-pointer">OpenCV Basics</h1>
             </a>
-            <ul class="flex items-center justify-around gap-6">
-                <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="text-white">Transformación de Imágenes</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="text-white">Aplicación de filtros</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="text-white">Caricaturizar imágenes</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="text-white">Detectar rostros</a></li>
-                <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="text-white">Extraer características</a></li>
+            <ul class="font-semibold flex items-center justify-between gap-6">
+                <div id="dropdown-container-1" class="w-48 relative">
+                    <li class="text-center transition hover:-translate-y-1"><button id="dropdown-button-1" class="text-white">Parte I</button></li>
+                    <ul id="dropdown-box-1" class="hidden border-2 border-gray-600 space-y-2 p-4 rounded-md text-center bg-gradient-to-l from-white to-gray-300 absolute inset-x-0">
+                        <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="">Capítulo 1</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="">Capítulo 2</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="">Capítulo 3</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="">Capítulo 4</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="">Capítulo 5</a></li>
+                    </ul>
+                </div>
+
+                <div id="dropdown-container-2" class="w-48 relative">
+                    <li class="text-center transition hover:-translate-y-1"><button id="dropdown-button-2" class="text-white">Parte II</button></li>
+                    <ul id="dropdown-box-2" class="hidden border-2 border-gray-600 space-y-2 p-4 rounded-md text-center bg-gradient-to-l from-white to-gray-300 absolute inset-x-0">
+                        <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="">Capítulo 6</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="">Capítulo 7</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="">Capítulo 8</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="">Capítulo 9</a></li>
+                        <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="">Capítulo 10</a></li>
+                    </ul>
+                </div>
             </ul>
         </div>
     </nav>
     <main class="container mx-auto my-24">
         {% block content %}
-        <div class="grid gap-6 grid-cols-3 max-w-7xl mx-auto mb-6">
+        <div class="p-6 grid gap-6 grid-cols-1 md:grid-cols-2 mx-auto mb-6">
             <a href="{% url "transformation_index" %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
@@ -75,9 +91,8 @@
                         </svg>
                     </div>
                 </div>
-            </a>     
-        </div>
-        <div class="grid gap-6 grid-cols-2 max-w-7xl mx-auto">
+            </a>  
+
             <a href="{% url 'face_detector_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
@@ -110,16 +125,148 @@
                         </svg>
                     </div>
                 </div>
+            </a>  
+
+            <a href="{% url "seam_index" %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-camera-rotate"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Expansión de imágenes</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Aplicaciones del método Seam Carving.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
             </a>
+
+            <a href="{% url 'filters_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-filter"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Detección de formas</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Detectar formas y segmentación de imágenes</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'cartooning_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-paint-brush"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Detección de objetos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Detección de objetos en imágenes y video.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>  
+
+            <a href="{% url 'face_detector_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-user-secret"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Reconocimiento de Objetos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Detección automática de objetos.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'features_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-magnifying-glass"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Realidad Aumentada</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Identificación de características importantes en imágenes, esquinas, etc.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>  
+
+            <a href="{% url 'features_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-2x fa-magnifying-glass"></i>
+                        <h3 class="ml-2 text-xl font-semibold">Aprendizaje Automático</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Identificación de características importantes en imágenes, esquinas, etc.</p>
+                    <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
+                        Ver más
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </a>  
         </div>
         {% endblock %}
     </main>
 
-    <footer class="fixed bottom-0 w-full bg-gray-100 p-4 mt-12">
+    <footer class="fixed shadow-lg bottom-0 w-full bg-gray-100 p-4 mt-12">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 OpenCVBasics. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+        const dropdownButton1 = document.getElementById('dropdown-button-1');
+        const dropdownButton2 = document.getElementById('dropdown-button-2');
+        const dropdownBox1 = document.getElementById('dropdown-box-1');
+        const dropdownBox2 = document.getElementById('dropdown-box-2');
+        const dropdownContainer1 = document.getElementById('dropdown-container-1');
+        const dropdownContainer2 = document.getElementById('dropdown-container-2');
+
+        dropdownButton1.addEventListener('click', () => {
+            dropdownBox1.classList.toggle('hidden');
+        });
+
+        dropdownContainer2.addEventListener('mouseover', () => {
+            dropdownBox2.classList.remove('hidden');
+        });
+        dropdownContainer2.addEventListener('mouseout', () => {
+            dropdownBox2.classList.add('hidden');
+        });
+
+        dropdownContainer1.addEventListener('mouseover', () => {
+            dropdownBox1.classList.remove('hidden');
+        });
+        dropdownContainer1.addEventListener('mouseout', () => {
+            dropdownBox1.classList.add('hidden');
+        });
+
+        dropdownButton2.addEventListener('click', () => {
+            dropdownBox2.classList.toggle('hidden');
+        });
+    </script>
     {% block scripts %}
     {% endblock %}
 </body>

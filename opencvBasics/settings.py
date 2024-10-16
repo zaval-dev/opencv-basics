@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'imageCartoon',
     'faceDetector',
     'imageFeatures',
+    'seamCarving',
 ]
 
 MIDDLEWARE = [
