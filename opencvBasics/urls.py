@@ -30,4 +30,5 @@ urlpatterns = [
     path('detector/', include('faceDetector.urls')),
     path('features/', include('imageFeatures.urls')),
     path('seam-carving/', include('seamCarving.urls')),
+    path('shapes/', include('detectingShapes.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

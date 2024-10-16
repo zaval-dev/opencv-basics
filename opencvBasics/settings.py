@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'faceDetector',
     'imageFeatures',
     'seamCarving',
+    'detectingShapes',
 ]
 
 MIDDLEWARE = [
