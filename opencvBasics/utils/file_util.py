@@ -14,13 +14,14 @@ def save_uploaded_image(image):
 def delete_all_media():
     media_root = settings.MEDIA_ROOT
     for filename in os.listdir(media_root):
-        file_path = os.path.join(media_root, filename)
-        try:
-            if os.path.isfile(file_path):
-                os.remove(file_path)
-                print(f"Archivo eliminado: {file_path}")
-        except Exception as e:
-            print(f"Error al eliminar {file_path}: {e}")
+        if filename != '.gitkeep':
+            file_path = os.path.join(media_root, filename)
+            try:
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+                    print(f"Archivo eliminado: {file_path}")
+            except Exception as e:
+                print(f"Error al eliminar {file_path}: {e}")
             
 def cartoonize_image(img, ksize=5, sketch_mode=False):
     num_repetitions, sigma_color, sigma_space, ds_factor = 10, 5, 7, 4 
@@ -107,7 +108,7 @@ def batman_mask(img):
 #     return img
 
 mouth_cascade = cv2.CascadeClassifier('opencvBasics/utils/xml/haarcascade_mcs_mouth.xml')
-moustache_mask = cv2.imread('opencvBasics/utils/images/moustache.png')  # Cargar con transparencia si existe
+moustache_mask = cv2.imread('opencvBasics/utils/images/moustache.png')
 
 def moustache_filter(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
