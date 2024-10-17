@@ -4,7 +4,7 @@ import numpy as np
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
-import opencvBasics.utils.file_util as utils  # Asumiendo que tienes un utilitario para guardar imágenes
+import opencvBasics.utils.file_util as utils
 
 def index(request):
     return render(request, 'shapes-index.html')
