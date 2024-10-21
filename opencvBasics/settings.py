@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'imageFeatures',
     'seamCarving',
     'detectingShapes',
+    'detectingObject',
     'trackingOjects',
     'reality',
 ]

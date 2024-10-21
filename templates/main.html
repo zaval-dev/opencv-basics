@@ -17,23 +17,24 @@
             <ul class="font-semibold flex items-center justify-between gap-6">
                 <div id="dropdown-container-1" class="w-48 relative">
                     <li class="text-center transition hover:-translate-y-1"><button id="dropdown-button-1" class="text-white">Parte I</button></li>
-                    <ul id="dropdown-box-1" class="hidden border-2 border-gray-600 space-y-2 p-4 rounded-md text-center bg-gradient-to-l from-white to-gray-300 absolute inset-x-0">
-                        <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="">Capítulo 1</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="">Capítulo 2</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="">Capítulo 3</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="">Capítulo 4</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="">Capítulo 5</a></li>
+                    <ul id="dropdown-box-1" class="hidden text-white border-2 border-gray-600 space-y-2 p-4 rounded-md text-center bg-green-700 absolute inset-x-0">
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "transformation_index" %}" class="">Capítulo 1</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "filters_index" %}" class="">Capítulo 2</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "cartooning_index" %}" class="">Capítulo 3</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "face_detector_index" %}" class="">Capítulo 4</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "features_index" %}" class="">Capítulo 5</a></li>
                     </ul>
                 </div>
 
                 <div id="dropdown-container-2" class="w-48 relative">
                     <li class="text-center transition hover:-translate-y-1"><button id="dropdown-button-2" class="text-white">Parte II</button></li>
-                    <ul id="dropdown-box-2" class="hidden border-2 border-gray-600 space-y-2 p-4 rounded-md text-center bg-gradient-to-l from-white to-gray-300 absolute inset-x-0">
-                        <li class="transition hover:-translate-y-1"><a href="{% url "transformation_index" %}" class="">Capítulo 6</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "filters_index" %}" class="">Capítulo 7</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "cartooning_index" %}" class="">Capítulo 8</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "face_detector_index" %}" class="">Capítulo 9</a></li>
-                        <li class="transition hover:-translate-y-1"><a href="{% url "features_index" %}" class="">Capítulo 10</a></li>
+                    <ul id="dropdown-box-2" class="hidden text-white border-2 border-gray-600 space-y-2 p-4 rounded-md text-center bg-green-700 absolute inset-x-0">
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "seam_index" %}" class="">Capítulo 6</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "shapes_index" %}" class="">Capítulo 7</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "tracking_index" %}" class="">Capítulo 8</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "detect_objetcs_index" %}" class="">Capítulo 9</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "reality_index" %}" class="">Capítulo 10</a></li>
+                        <li class="transition-colors duration-300 py-1 rounded-md hover:bg-green-900"><a href="{% url "dog_cat" %}" class="">Capítulo 11</a></li>
                     </ul>
                 </div>
             </ul>
@@ -178,7 +179,7 @@
                 </div>
             </a>  
 
-            <a href="{% url 'face_detector_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+            <a href="{% url 'detect_objetcs_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
                         <i class="fa-solid fa-2x fa-vector-square"></i>
@@ -212,13 +213,13 @@
                 </div>
             </a>  
 
-            <a href="{% url 'features_index' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+            <a href="{% url 'dog_cat' %}" class="group block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
                         <i class="fa-brands fa-2x fa-leanpub"></i>
                         <h3 class="ml-2 text-xl font-semibold">Aprendizaje Automático</h3>
                     </div>
-                    <p class="text-gray-600 mb-4">Identificación de características importantes en imágenes, esquinas, etc.</p>
+                    <p class="text-gray-600 mb-4"></p>
                     <div class="flex items-center text-sm text-gray-500 group-hover:text-gray-700">
                         Ver más
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1">

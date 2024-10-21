@@ -33,4 +33,5 @@ urlpatterns = [
     path('shapes/', include('detectingShapes.urls')),
     path('tracking/', include('trackingOjects.urls')),
     path('reality/', include('reality.urls')),
+    path('objects/', include('detectingObject.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

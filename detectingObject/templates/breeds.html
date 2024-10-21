@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block title %}Detect{% endblock title %}
+
+{% block content %}
+    <div class="container mx-auto my-8">
+        <h1 class="text-2xl font-bold mb-4">Razas de perros</h1>
+        <form method="POST" enctype="multipart/form-data" class="mb-8">
+            {% csrf_token %}
+            <div class="flex items-center gap-10">
+                <div>
+                    <label class="block mb-2">Sube una imagen:</label>
+                    <input type="file" name="image" class="block mb-4 p-2 border border-gray-300" required>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2">Aplicar</button>
+            </div>
+        </form>
+
+        {% if original_image %}
+        <div class="flex justify-around items-center gap-10 mb-6">
+            <div>
+                <h2 class="font-bold mb-2">Tu imagen:</h2>
+                <img src="{{ original_image }}" alt="Imagen Original" class="w-full h-auto">
+            </div>
+            <div>
+                <h2 class="font-bold mb-2 text-2xl">Resultado:</h2>
+                <p class="text-lg font-semibold">La raza de tu perro es: <span class="capitalize font-black">{{ resultant_class }}</span></p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock content %}

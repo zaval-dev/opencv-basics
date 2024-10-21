@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block title %}Detect Objets{% endblock title %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-8">Detección de objetos</h2>
+    <div class="mx-auto flex items-center justify-center p-4">
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="{% url "dense_images" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-square-minus"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Características Densas</h3>
+            </a>
+            <a href="{% url "sift_images" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-square-plus"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Detector SIFT</h3>
+            </a>
+            <a href="{% url "dog_breeds" %}" class="cursor-pointer w-64 bg-white rounded-lg shadow-md p-6 flex flex-col items-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:bg-green-100 space-y-2">
+                <i class="fa-solid fa-2x fa-dog"></i>
+                <h3 class="text-lg font-semibold text-gray-800">Razas de perros</h3>
+            </a>
+        </div>
+    </div>
+{% endblock content %}
